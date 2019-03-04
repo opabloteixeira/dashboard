@@ -1,0 +1,22 @@
+.graphic{
+    max-width: 100%;
+    height: auto; 
+}
+
+.chart {
+    height: 450px; 
+}
+ 
+
+@media (max-width: 720px){
+    .chart {
+        height: 250px; 
+    }
+}
+
+
+@media (min-width: 1024px){
+    .chart {
+        height: 500px; 
+    }
+}
