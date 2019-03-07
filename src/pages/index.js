@@ -1,11 +1,13 @@
 
 
-const $itens = document.querySelectorAll(".numbers");
+const $itens  = document.querySelectorAll(".numbers");
+const $titles = document.querySelectorAll(".title-item");
+const $button = document.querySelector(".input-button");
 
-checkResponse( "widgets", function (response) {
 
 
-    console.log(response);
+
+createComponent( "widgets", function (response) {
 
     let pageViewsRight = parseFloat(response.pageViews / 1000).toFixed(1)
 
@@ -15,8 +17,13 @@ checkResponse( "widgets", function (response) {
     $itens[3].insertAdjacentText("afterbegin", pageViewsRight);
 
 
-
 }, function (error) {
    console.log(error);
 });
 
+
+$button.addEventListener("click", event => {
+
+    createInputMessage();
+
+});

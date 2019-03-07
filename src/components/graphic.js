@@ -1,34 +1,47 @@
 $(document).ready(function(){
+  
+  let responseViews;
 
-  google.load("visualization", "1", {packages:["corechart"]});
-  google.setOnLoadCallback(drawChart);
-  function drawChart() {
+  createComponent( "pageViews", function (response) {
 
-      var data = google.visualization.arrayToDataTable([
-        ['Months', 'Access', 'Access'],
-        ['January',   1,         400],
-        ['February',  1170,      460],
-        ['March',     660,       1120],
-        ['April',     1030,      540],
-        ['May',       1030,      540],
-        ['June',      1030,      540],
-        ['July',      1030,      540]
-        ]);
+      responseViews = response;
 
 
-      var options = {
-        title: 'Site Traffic Overview',
-        vAxis: {minValue: 0},
-        legend: 'none',
-        colors: ['gray', 'blue'],
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
 
-      };
+          var data = google.visualization.arrayToDataTable([
+            ['Months', 'Access'],
+            ['January',   responseViews[0].views ],
+            ['February',  responseViews[1].views ],
+            ['March',     responseViews[2].views ],
+            ['April',     responseViews[3].views ],
+            ['May',       responseViews[4].views ],
+            ['June',      responseViews[5].views ],
+            ['July',      responseViews[6].views ]
+            ]);
 
-        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
 
-      $(window).resize(function(){
-        drawChart();
+          var options = {
+            title: 'Site Traffic Overview',
+            vAxis: {minValue: 0},
+            legend: 'none',
+            colors: ['blue'],
+
+          };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+          }
+
+          $(window).resize(function(){
+            drawChart();
+          });
+
+
+      }, function (error) {
+          console.log(error);
       });
+
 });

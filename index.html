@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Widgets</title>
+    <title>Dashboard</title>
 
 </head>
     <div class="center">
@@ -77,26 +77,28 @@
 
         <section class="messages">
             <header class="chat-header">
-
+                <div class="wrap-icon-message">
+                    <i class="far fa-comments fa-2x icon-message"></i>
+                    <span class="message-title">Chat</span>              
+                </div> 
             </header>
+            
+            <section class="message-list">
 
-
-
-            <article class="message-item">
                 
-            </article>
-
-            <article class="message-item">
-
-            </article>
-
-            <article class="message-item">
-
-            </article>
-
-            <article class="message-item">
-
-            </article>
+            </section>   
+            
+            <div class="rebebeDados"></div>
+            
+            <div class="box-input-text">
+                <div class="wrap-text">
+                    <form method="post" class="submit-message">
+                        <input placeholder="Type your message here..." class="input-messages" type="text">
+                     
+                        <input class="input-button"type="submit" value="Send">
+                    </form>
+                </div>
+            </div> 
 
 
         </section>
@@ -117,9 +119,10 @@
     <!--================== BEGIN BASE JS ==================-->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="src/components/graphic.js"></script>
     <script type="text/javascript" src="src/pages/server.js"></script>
+    <script type="text/javascript" src="src/components/graphic.js"></script>
+    <script type="text/javascript" src="src/components/messages.js"></script>
     <script type="text/javascript" src="src/pages/index.js"></script>
     <!--================== END BASE JS ==================-->
 </body>
-</html>
+</html> 

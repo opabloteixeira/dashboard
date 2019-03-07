@@ -8,6 +8,12 @@
 }
  
 
+@media (min-width: 1024px){
+    .chart {
+        height: 500px; 
+    }
+}
+
 @media (max-width: 720px){
     .chart {
         height: 250px; 
@@ -15,8 +21,8 @@
 }
 
 
-@media (min-width: 1024px){
+@media (max-width: 450px){
     .chart {
-        height: 500px; 
+        height: 180px; 
     }
 }
