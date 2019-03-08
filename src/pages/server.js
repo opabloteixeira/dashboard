@@ -21,14 +21,34 @@
 
 
 
-    function createInputMessage( post, response, err){
+    function inputMessage( post, response, err){
         
         $('.submit-message').submit(function(){
+
+            let $form = $(".submit-message");
+           /* let data = getFormData($form);*/
+            console.log($form);
+/*
+
+            function getFormData($form){
+                var unindexed_array = $form.serializeArray();
+                var indexed_array = {};
+            
+                $.map(unindexed_array, function(n, i){
+                    indexed_array[n['name']] = n['value'];
+                });
+            
+                return indexed_array;
+            }*/
+
+
+
+            //console.log(data);
             
             $.ajax({
                 type: "post",
                 url: 'http://dev.4all.com:3050/messages',
-                data: $(".submit-message").serialize(),
+                data: $form,
                 dataType: "json",
                 
                 success: function (data) {
@@ -36,14 +56,9 @@
                 },
             })
             
-            const text = document.querySelector(".input-messages").value;
-            
-            
+            const text = document.querySelector(".input-messages").value;  
             console.log(text);
-            
-            
             document.querySelector(".input-messages").value = "";
-
 
             return false;
         }); 

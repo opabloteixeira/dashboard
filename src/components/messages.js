@@ -48,33 +48,39 @@ console.log(error);
 
 
 
-createInputMessage("messages", function(response){
-
-    const $messageList = document.querySelector(".message-list");
-    const $message = document.querySelector(".input-messages").value;
+function createInputMessage(){
 
 
-    let $item  = `                    
-    <article class="message-item">
-        <div class="wrap-message-itens">
-
-            <figure class="image left"></figure>
-
-            <h2 class="title-item"> Eu
-                <span class="message-time">
-                1 min ago
-                </span>
-            </h2>
-
-            <p class="text-item">
-                ${message}
-            </p>
-        </div>  
-    </article>`;
+        const $messageList = document.querySelector(".message-list");
+        const $message = document.querySelector(".input-messages").value;
 
 
-    $messageList.insertAdjacentHTML("beforeend",$item);
+        let $item  = `                    
+        <article class="message-item">
+            <div class="wrap-message-itens">
 
-});
+                <figure class="image left"></figure>
+
+                <h2 class="title-item"> Eu
+                    <span class="message-time">
+                    1 min ago
+                    </span>
+                </h2>
+
+                <p class="text-item">
+                    ${$message}
+                </p>
+            </div>  
+        </article>`;
+
+
+        $messageList.insertAdjacentHTML("beforeend",$item);
+
+
+
+       inputMessage();
+
+    
+};
 
 

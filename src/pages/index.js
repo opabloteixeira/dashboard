@@ -23,7 +23,5 @@ createComponent( "widgets", function (response) {
 
 
 $button.addEventListener("click", event => {
-
     createInputMessage();
-
 });
