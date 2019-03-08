@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
   
   let responseViews;
 
@@ -43,5 +43,3 @@ $(document).ready(function(){
       }, function (error) {
           console.log(error);
       });
-
-});

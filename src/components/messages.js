@@ -54,6 +54,11 @@ function createInputMessage(){
         const $messageList = document.querySelector(".message-list");
         const $message = document.querySelector(".input-messages").value;
 
+        if($message == ""){
+            alert("Atenção, Preencha o campo de texto");
+            return false;
+        }
+
 
         let $item  = `                    
         <article class="message-item">
@@ -75,7 +80,6 @@ function createInputMessage(){
 
 
         $messageList.insertAdjacentHTML("beforeend",$item);
-
 
 
        inputMessage();

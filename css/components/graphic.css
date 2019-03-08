@@ -8,6 +8,8 @@
 }
  
 
+
+/* ===============Responsive==================*/
 @media (min-width: 1024px){
     .chart {
         height: 500px; 
@@ -26,3 +28,4 @@
         height: 180px; 
     }
 }
+/* ===============End Responsive==================*/

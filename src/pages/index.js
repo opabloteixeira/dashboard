@@ -1,5 +1,4 @@
 
-
 const $itens  = document.querySelectorAll(".numbers");
 const $titles = document.querySelectorAll(".title-item");
 const $button = document.querySelector(".input-button");
@@ -20,6 +19,8 @@ createComponent( "widgets", function (response) {
 }, function (error) {
    console.log(error);
 });
+
+
 
 
 $button.addEventListener("click", event => {
